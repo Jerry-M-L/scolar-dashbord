@@ -12,6 +12,8 @@ export default function TopNavigation({ sidebarOpen, onToggleSidebar }: TopNavig
         <button
           onClick={onToggleSidebar}
           className="md:hidden p-2 rounded-lg hover:bg-secondary text-foreground"
+          aria-label="Ouvrir ou fermer le menu"
+          title="Ouvrir ou fermer le menu"
         >
           <IconMenu size={20} />
         </button>
@@ -29,12 +31,12 @@ export default function TopNavigation({ sidebarOpen, onToggleSidebar }: TopNavig
       </div>
 
       <div className="flex items-center gap-4">
-        <button className="relative p-2 rounded-lg hover:bg-secondary text-foreground transition-colors">
+        <button className="relative p-2 rounded-lg hover:bg-secondary text-foreground transition-colors" aria-label="Notifications" title="Notifications">
           <IconBell size={20} />
           <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
         </button>
 
-        <button className="p-2 rounded-lg hover:bg-secondary text-foreground transition-colors">
+        <button className="p-2 rounded-lg hover:bg-secondary text-foreground transition-colors" aria-label="Paramètres" title="Paramètres">
           <IconSettings size={20} />
         </button>
 

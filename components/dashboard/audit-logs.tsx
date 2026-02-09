@@ -143,6 +143,8 @@ export default function AuditLogs() {
                 value={selectedAction}
                 onChange={(e) => setSelectedAction(e.target.value)}
                 className="bg-secondary text-foreground border border-border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                aria-label="Filtrer par action"
+                title="Filtrer par action"
               >
                 <option value="all">Toutes les actions</option>
                 <option value="Created">Créé</option>
@@ -157,6 +159,8 @@ export default function AuditLogs() {
               value={selectedStatus}
               onChange={(e) => setSelectedStatus(e.target.value)}
               className="bg-secondary text-foreground border border-border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+              aria-label="Filtrer par statut"
+              title="Filtrer par statut"
             >
               <option value="all">Tous les statuts</option>
               <option value="success">Succès</option>

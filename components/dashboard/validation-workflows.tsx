@@ -115,6 +115,8 @@ export default function ValidationWorkflows() {
                 <p className="text-sm text-muted-foreground mt-1">ID: {selectedRequest.id}</p>
               </div>
               <button
+                title="Fermer"
+                aria-label="Fermer"
                 onClick={() => {
                   setShowModal(false)
                   setActionType(null)
