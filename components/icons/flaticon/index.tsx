@@ -1,5 +1,5 @@
 /**
- * Flaticon-style icon pack for Scholar
+ * Flaticon-style icon pack for Scolar
  * Outline/rounded line icons, consistent stroke, minimalist
  * Centralized in components/icons/flaticon
  */
@@ -53,6 +53,25 @@ export const IconUsers = createIcon(
     <circle cx="9" cy="7" r="4" />
     <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
     <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+  </>
+)
+
+// Class - students and chart
+export const IconClass = createIcon(
+  <>
+    {/* Students heads */}
+    <circle cx="8" cy="8.5" r="2" />
+    <circle cx="14" cy="7" r="2" />
+    {/* Students bodies */}
+    <path d="M5.5 15a3 3 0 0 1 5 0" />
+    <path d="M11.5 13.5a3 3 0 0 1 5 0" />
+    {/* Bars / progression */}
+    <path d="M4 19h1.5v-3H4z" />
+    <path d="M8 19h1.5v-4H8z" />
+    <path d="M12 19h1.5v-5H12z" />
+    <path d="M16 19h1.5v-6H16z" />
+    {/* Base line */}
+    <path d="M3 19h18" />
   </>
 )
 
@@ -147,10 +166,31 @@ export const IconX = createIcon(
   </>
 )
 
-// Dollar sign - argent
+// Dollar bill - billet de banque
 export const IconDollarSign = createIcon(
   <>
-    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+    {/* Rectangle du billet */}
+    <rect x="3" y="6" width="18" height="12" rx="2" />
+    {/* Cercle central */}
+    <circle cx="12" cy="12" r="3" />
+    {/* Petit symbole de monnaie */}
+    <path d="M12 10v4M11 11h2" />
+    {/* Détails latéraux */}
+    <path d="M6 9.5h1.5M6 14.5h1.5" />
+    <path d="M16.5 9.5H18M16.5 14.5H18" />
+  </>
+)
+
+// Finance icon - document with currency and chart (inspiré de l'icône fournie)
+export const IconFinance = createIcon(
+  <>
+    {/* Document */}
+    <rect x="4" y="3" width="16" height="18" rx="2" />
+    {/* Coin */}
+    <circle cx="10" cy="11" r="3" />
+    <path d="M10 8.5v5M8.8 9.5h2.4" />
+    {/* Small chart bars */}
+    <path d="M14 15v3M17 13v5" />
   </>
 )
 

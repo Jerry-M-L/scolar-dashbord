@@ -1,10 +1,10 @@
 import React from 'react'
-import KPICards from './kpi-cards'
+import KPICards from './cards'
 import Charts from './charts'
 import DataTables from './data-tables'
 import ValidationWorkflows from './validation-workflows'
 import AuditLogs from './audit-logs'
-import { IconUsers, IconGraduationCap, IconDollarSign, IconCheckSquare, IconBookOpen, IconHelpCircle, IconSettings, IconHourglass, IconLayoutList, IconCalendar, IconCalendarCheck } from '@/components/icons/flaticon'
+import { IconUsers, IconGraduationCap, IconDollarSign, IconCheckSquare, IconBookOpen, IconHelpCircle, IconSettings, IconClass, IconLayoutList, IconCalendar, IconCalendarCheck } from '@/components/icons/flaticon'
 
 interface DashboardContentProps {
   selectedView: string
@@ -18,7 +18,7 @@ export default function DashboardContent({ selectedView }: DashboardContentProps
           <div className="p-6 space-y-6">
             {/* Title */}
             <div>
-              <h1 className="text-4xl font-bold text-foreground text-balance">Bienvenue, Dr. Johnson</h1>
+              <h1 className="text-4xl font-bold text-foreground text-balance">Bienvenue, Dr. John DOE</h1>
               <p className="text-muted-foreground mt-2">Voici ce qui se passe dans votre réseau scolaire aujourd'hui.</p>
             </div>
 
@@ -85,7 +85,7 @@ export default function DashboardContent({ selectedView }: DashboardContentProps
           <div className="p-6 space-y-6">
             <div>
               <h1 className="text-3xl font-bold text-foreground flex items-center gap-3 text-balance">
-                <IconGraduationCap size={32} className="text-accent" />
+                <IconGraduationCap size={32} className="text-primary" />
                 Gestion du personnel
               </h1>
               <p className="text-muted-foreground mt-2">Gérer les membres du personnel, les rôles et la structure organisationnelle</p>
@@ -123,21 +123,32 @@ export default function DashboardContent({ selectedView }: DashboardContentProps
                 <h3 className="text-lg font-bold text-foreground mb-4">Répartition par département</h3>
                 <div className="space-y-3">
                   {[
-                    { name: 'Mathématiques', count: 0, color: 'from-blue-500 to-blue-600' },
-                    { name: 'Français', count: 0, color: 'from-purple-500 to-purple-600' },
-                    { name: 'Sciences', count: 0, color: 'from-green-500 to-green-600' },
-                    { name: 'Éducation physique', count: 0, color: 'from-orange-500 to-orange-600' },
-                    { name: 'Arts et humanités', count: 0, color: 'from-pink-500 to-pink-600' },
-                    { name: 'Administration', count: 0, color: 'from-teal-500 to-teal-600' },
-                  ].map((dept, idx) => (
+                    { name: 'Mathématiques', count: 0 },
+                    { name: 'Français', count: 0 },
+                    { name: 'Sciences', count: 0 },
+                    { name: 'Éducation physique', count: 0 },
+                    { name: 'Arts et humanités', count: 0 },
+                    { name: 'Administration', count: 0 },
+                  ].map((dept, idx) => {
+                    const chartColors = [
+                      'from-chart-1 to-chart-1',
+                      'from-chart-1 to-chart-2',
+                      'from-chart-2 to-chart-2',
+                      'from-chart-4 to-chart-4',
+                      'from-chart-3 to-chart-3',
+                      'from-chart-2 to-chart-1',
+                    ]
+                    const colorClass = chartColors[idx % chartColors.length]
+                    return (
                     <div key={idx} className="flex items-center justify-between">
                       <div className="flex items-center gap-3 flex-1">
-                        <div className={`w-3 h-3 rounded-full bg-gradient-to-r ${dept.color}`}></div>
+                        <div className={`w-3 h-3 rounded-full bg-gradient-to-r ${colorClass}`}></div>
                         <span className="text-sm text-foreground">{dept.name}</span>
                       </div>
                       <span className="text-sm font-semibold text-foreground">{dept.count}</span>
                     </div>
-                  ))}
+                  )
+                  })
                 </div>
               </div>
 
@@ -145,10 +156,10 @@ export default function DashboardContent({ selectedView }: DashboardContentProps
                 <h3 className="text-lg font-bold text-foreground mb-4">Métriques de performance</h3>
                 <div className="space-y-4">
                   {[
-                    { metric: 'Fin de formation', value: 0, color: 'bg-green-500' },
-                    { metric: 'Taux de présence', value: 0, color: 'bg-blue-500' },
-                    { metric: 'Évaluation de performance', value: 0, color: 'bg-purple-500' },
-                    { metric: 'Satisfaction des étudiants', value: 0, color: 'bg-orange-500' },
+                    { metric: 'Fin de formation', value: 0, color: 'bg-status-success' },
+                    { metric: 'Taux de présence', value: 0, color: 'bg-chart-1' },
+                    { metric: 'Évaluation de performance', value: 0, color: 'bg-chart-3' },
+                    { metric: 'Satisfaction des étudiants', value: 0, color: 'bg-chart-4' },
                   ].map((item, idx) => (
                     <div key={idx}>
                       <div className="flex items-center justify-between mb-2">
@@ -174,7 +185,7 @@ export default function DashboardContent({ selectedView }: DashboardContentProps
           <div className="p-6 space-y-6">
             <div>
               <h1 className="text-3xl font-bold text-foreground flex items-center gap-3 text-balance">
-                <IconDollarSign size={32} className="text-orange-500" />
+                <IconDollarSign size={32} className="text-chart-4" />
                 Gestion financière
               </h1>
               <p className="text-muted-foreground mt-2">Surveiller les budgets, les dépenses et les revenus de toutes les écoles</p>
@@ -245,7 +256,7 @@ export default function DashboardContent({ selectedView }: DashboardContentProps
         const placeholders: Record<string, { icon: React.ReactNode; label: string }> = {
           parents: { icon: <IconUsers size={32} className="text-primary" />, label: 'Parents' },
           library: { icon: <IconBookOpen size={32} className="text-primary" />, label: 'Bibliothèque' },
-          class: { icon: <IconHourglass size={32} className="text-primary" />, label: 'Classe' },
+          class: { icon: <IconClass size={32} className="text-primary" />, label: 'Classe' },
           subject: { icon: <IconLayoutList size={32} className="text-primary" />, label: 'Matière' },
           routine: { icon: <IconCalendar size={32} className="text-primary" />, label: 'Emploi du temps' },
           attendance: { icon: <IconCalendarCheck size={32} className="text-primary" />, label: 'Présence' },

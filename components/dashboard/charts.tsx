@@ -10,19 +10,19 @@ const lineData = [
 ]
 
 const barData = [
-  { school: 'Lycée Central', enrollment: 0, staff: 0, budget: 0 },
-  { school: 'Collège Est', enrollment: 0, staff: 0, budget: 0 },
-  { school: 'École Primaire Ouest', enrollment: 0, staff: 0, budget: 0 },
-  { school: 'Académie Nord', enrollment: 0, staff: 0, budget: 0 },
-  { school: 'Collège Sud', enrollment: 0, staff: 0, budget: 0 },
-  { school: 'Préparatoire Centre-ville', enrollment: 0, staff: 0, budget: 0 },
+  { school: 'Ecole Saint Charles', enrollment: 0, staff: 0, budget: 0 },
+  { school: 'Lycée Ben Rachid', enrollment: 0, staff: 0, budget: 0 },
+  { school: 'Haute Ecole de Gestion', enrollment: 0, staff: 0, budget: 0 },
+  { school: 'GSPI', enrollment: 0, staff: 0, budget: 0 },
+  { school: 'ESUFOP', enrollment: 0, staff: 0, budget: 0 },
+  { school: 'Lycée Miskine', enrollment: 0, staff: 0, budget: 0 },
 ]
 
 const pieData = [
-  { name: 'Approuvé', value: 0, color: '#10b981' },
-  { name: 'En attente', value: 0, color: '#f59e0b' },
-  { name: 'Rejeté', value: 0, color: '#ef4444' },
-  { name: 'En révision', value: 0, color: '#3b82f6' },
+  { name: 'Approuvé', value: 0, color: 'hsl(var(--status-success))' },
+  { name: 'En attente', value: 0, color: 'hsl(var(--status-warning))' },
+  { name: 'Rejeté', value: 0, color: 'hsl(var(--status-error))' },
+  { name: 'En révision', value: 0, color: 'hsl(var(--chart-3))' },
 ]
 
 export default function Charts() {
@@ -32,7 +32,7 @@ export default function Charts() {
       <div className="bg-card border border-border rounded-lg p-6 hover:shadow-lg transition-shadow duration-300">
         <div className="mb-6">
           <h3 className="text-lg font-bold text-foreground">Tendances des inscriptions</h3>
-          <p className="text-sm text-muted-foreground">Vue d'ensemble sur 6 mois</p>
+          <p className="text-sm text-muted-foreground">Vue d'ensemble sur 9 mois</p>
         </div>
         <ResponsiveContainer width="100%" height={300}>
           <LineChart data={lineData}>

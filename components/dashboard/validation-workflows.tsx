@@ -43,7 +43,7 @@ export default function ValidationWorkflows() {
       case 'medium':
         return 'bg-yellow-100 dark:bg-yellow-950 text-yellow-700 dark:text-yellow-300'
       case 'low':
-        return 'bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300'
+        return 'bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300'
       default:
         return 'bg-gray-100 dark:bg-gray-950 text-gray-700 dark:text-gray-300'
     }
@@ -128,7 +128,7 @@ export default function ValidationWorkflows() {
             </div>
 
             {/* Modal Content */}
-            <div className="p-6 space-y-4 max-h-96 overflow-y-auto">
+            <div className="p-6 space-y-4 max-h-96 overflow-y-auto scrollbar-auto">
               <div>
                 <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">École</label>
                 <p className="text-foreground mt-1">{selectedRequest.school}</p>

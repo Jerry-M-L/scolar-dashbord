@@ -84,7 +84,7 @@ export default function AuditLogs() {
   const getActionColor = (action: string) => {
     const actionLower = action.toLowerCase()
     if (actionLower.includes('created') || actionLower.includes('créé')) {
-      return 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950'
+      return 'text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-950'
     }
     if (actionLower.includes('updated') || actionLower.includes('modifié')) {
       return 'text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-950'

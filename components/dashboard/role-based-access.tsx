@@ -48,7 +48,7 @@ const roleConfigs: RoleConfig[] = [
       'Accès limité aux journaux d\'audit',
     ],
     accessLevel: 'high',
-    color: 'from-blue-500 to-blue-600',
+    color: 'from-purple-500 to-purple-600',
   },
   {
     role: 'teacher',

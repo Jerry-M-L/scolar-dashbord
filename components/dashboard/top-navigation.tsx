@@ -31,22 +31,29 @@ export default function TopNavigation({ sidebarOpen, onToggleSidebar }: TopNavig
       </div>
 
       <div className="flex items-center gap-4">
-        <button className="relative p-2 rounded-lg hover:bg-secondary text-foreground transition-colors" aria-label="Notifications" title="Notifications">
-          <IconBell size={20} />
-          <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+        <button
+          className="group relative p-2 rounded-lg hover:bg-secondary text-foreground transition-colors"
+          aria-label="Notifications"
+          title="Notifications"
+        >
+          <IconBell
+            size={20}
+            className="transition-transform group-hover:animate-[bounce_1.5s_ease_infinite]"
+          />
+          <span className="absolute top-1 right-1 w-2 h-2 bg-status-error rounded-full"></span>
         </button>
 
-        <button className="p-2 rounded-lg hover:bg-secondary text-foreground transition-colors" aria-label="Paramètres" title="Paramètres">
-          <IconSettings size={20} />
+        <button className="group p-2 rounded-lg hover:bg-secondary text-foreground transition-colors" aria-label="Paramètres" title="Paramètres">
+          <IconSettings size={20} className="transition-transform duration-300 group-hover:animate-[spin_2s_linear_infinite]" />
         </button>
 
         <div className="flex items-center gap-3 pl-4 border-l border-border">
           <div className="text-right">
-            <p className="text-sm font-medium text-foreground">Dr. Sarah Johnson</p>
+            <p className="text-sm font-medium text-foreground">Dr. John DOE</p>
             <p className="text-xs text-muted-foreground">Super Administrateur</p>
           </div>
           <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-semibold">
-            SJ
+            JD
           </div>
         </div>
       </div>

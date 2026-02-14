@@ -60,6 +60,12 @@ const config: Config = {
           border: 'hsl(var(--sidebar-border))',
           ring: 'hsl(var(--sidebar-ring))',
         },
+        status: {
+          success: 'hsl(var(--status-success))',
+          warning: 'hsl(var(--status-warning))',
+          pending: 'hsl(var(--status-pending))',
+          error: 'hsl(var(--status-error))',
+        },
       },
       borderRadius: {
         lg: 'var(--radius)',

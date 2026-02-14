@@ -23,7 +23,7 @@ body {
     --card-foreground: 210 15% 20%;
     --popover: 0 0% 100%;
     --popover-foreground: 210 15% 20%;
-    --primary: 210 70% 45%;
+    --primary: 270 70% 45%;
     --primary-foreground: 0 0% 100%;
     --secondary: 200 20% 90%;
     --secondary-foreground: 210 15% 20%;
@@ -35,8 +35,8 @@ body {
     --destructive-foreground: 0 0% 98%;
     --border: 210 20% 88%;
     --input: 210 20% 92%;
-    --ring: 210 70% 45%;
-    --chart-1: 210 100% 50%;
+    --ring: 270 70% 45%;
+    --chart-1: 270 100% 50%;
     --chart-2: 180 100% 40%;
     --chart-3: 260 70% 50%;
     --chart-4: 30 100% 50%;
@@ -44,15 +44,15 @@ body {
     --radius: 0.5rem;
     --sidebar-background: 0 0% 100%;
     --sidebar-foreground: 210 15% 20%;
-    --sidebar-primary: 210 100% 50%;
+    --sidebar-primary: 270 100% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 180 100% 50%;
     --sidebar-accent-foreground: 0 0% 100%;
     --sidebar-border: 210 20% 88%;
-    --sidebar-ring: 210 100% 50%;
+    --sidebar-ring: 270 100% 50%;
     --status-success: 120 80% 45%;
     --status-warning: 40 100% 50%;
-    --status-pending: 210 70% 50%;
+    --status-pending: 270 70% 50%;
     --status-error: 0 84% 60%;
   }
   
@@ -64,7 +64,7 @@ body {
     --card-foreground: 210 15% 20%;
     --popover: 0 0% 100%;
     --popover-foreground: 210 15% 20%;
-    --primary: 210 70% 45%;
+    --primary: 270 70% 45%;
     --primary-foreground: 0 0% 100%;
     --secondary: 200 20% 90%;
     --secondary-foreground: 210 15% 20%;
@@ -76,23 +76,23 @@ body {
     --destructive-foreground: 0 0% 98%;
     --border: 210 20% 88%;
     --input: 210 20% 92%;
-    --ring: 210 70% 45%;
-    --chart-1: 210 100% 50%;
+    --ring: 270 70% 45%;
+    --chart-1: 270 100% 50%;
     --chart-2: 180 100% 40%;
     --chart-3: 260 70% 50%;
     --chart-4: 30 100% 50%;
     --chart-5: 0 84% 60%;
     --sidebar-background: 0 0% 100%;
     --sidebar-foreground: 210 15% 20%;
-    --sidebar-primary: 210 100% 50%;
+    --sidebar-primary: 270 100% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 180 100% 50%;
     --sidebar-accent-foreground: 0 0% 100%;
     --sidebar-border: 210 20% 88%;
-    --sidebar-ring: 210 100% 50%;
+    --sidebar-ring: 270 100% 50%;
     --status-success: 120 80% 45%;
     --status-warning: 40 100% 50%;
-    --status-pending: 210 70% 50%;
+    --status-pending: 270 70% 50%;
     --status-error: 0 84% 60%;
   }
 }
@@ -104,4 +104,35 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Scrollbars discrètes : visibles surtout au survol ou pendant le scroll */
+.scrollbar-auto {
+  scrollbar-width: thin;
+}
+.scrollbar-auto {
+  scrollbar-color: hsl(var(--muted-foreground) / 0.15) transparent;
+}
+.scrollbar-auto:hover,
+.scrollbar-auto:focus-within {
+  scrollbar-color: hsl(var(--muted-foreground) / 0.4) transparent;
+}
+
+.scrollbar-auto::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scrollbar-auto::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-auto::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.15);
+  border-radius: 3px;
+}
+.scrollbar-auto:hover::-webkit-scrollbar-thumb,
+.scrollbar-auto:focus-within::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.4);
+}
+.scrollbar-auto::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.55);
 }
